@@ -1,0 +1,1 @@
+Copy the official CandyLake logo file here and name it candylake-logo.png. Keep the original logo artwork unchanged. Add approved product pack photos under products/.
