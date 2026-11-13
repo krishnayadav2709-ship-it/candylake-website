@@ -315,6 +315,8 @@ export default function ExportSection() {
                               ? "translate(-108,-40)"
                               : index === 1
                                 ? "translate(16,18)"
+                                : index === 3
+                                  ? "translate(-74,-40)"
                                 : "translate(16,-40)"
                           }
                           aria-hidden="true"
@@ -368,6 +370,16 @@ export default function ExportSection() {
                         strokeWidth={2.5}
                       />
                       <circle r={3.5} fill="#FFFFFF" />
+                    </g>
+                    <g
+                      className="cl-map-country-tooltip"
+                      transform="translate(-36,20)"
+                      aria-hidden="true"
+                    >
+                      <rect width={78} height={40} rx={10} />
+                      <text x={14} y={26}>
+                        India
+                      </text>
                     </g>
                   </Marker>
 

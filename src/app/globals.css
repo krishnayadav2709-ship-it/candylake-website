@@ -866,7 +866,7 @@ button{cursor:pointer}
       #142A3E,
       #0E2033
     );
-  padding: 12px 15px 0;
+  padding: 4px 15px 8px;
   isolation: isolate;
 }
 
@@ -1284,7 +1284,7 @@ button{cursor:pointer}
   }
 
   .cl-map-visual {
-    padding: 8px 5px 0;
+    padding: 2px 5px 6px;
   }
 
   .cl-map-corner-tag {
