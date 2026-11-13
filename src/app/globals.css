@@ -828,6 +828,7 @@ button{cursor:pointer}
   position: relative;
   z-index: 5;
   padding: 17px 25px 13px;
+  border-radius: 25px 25px 0 0;
   background: linear-gradient(
     120deg,
     #14283D,
@@ -918,6 +919,7 @@ button{cursor:pointer}
   position: relative;
   z-index: 2;
   width: 100%;
+  transform: translateY(-2.3%);
   filter: drop-shadow(0 12px 16px rgba(0, 0, 0, 0.2));
 }
 
@@ -1056,22 +1058,6 @@ button{cursor:pointer}
   50% {
     transform: scale(1.15);
   }
-}
-
-/* MAP CORNER TAG */
-
-.cl-map-corner-tag {
-  position: absolute;
-  z-index: 3;
-  top: 20px;
-  right: 22px;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  color: #F5B6BD;
-  font-size: 9px;
-  font-weight: 600;
-  letter-spacing: 0.3px;
 }
 
 /* FLOATING DECORATIONS */
@@ -1273,6 +1259,7 @@ button{cursor:pointer}
 
   .cl-map-header {
     padding: 14px 17px 11px;
+    border-radius: 16px 16px 0 0;
   }
 
   .cl-map-heading h3 {
@@ -1285,12 +1272,6 @@ button{cursor:pointer}
 
   .cl-map-visual {
     padding: 2px 5px 6px;
-  }
-
-  .cl-map-corner-tag {
-    top: 9px;
-    right: 9px;
-    font-size: 7px;
   }
 
   .cl-map-footer {
@@ -1312,10 +1293,6 @@ button{cursor:pointer}
 @media (max-width: 380px) {
   .cl-map-heading h3 {
     font-size: 17px;
-  }
-
-  .cl-map-corner-tag {
-    display: none;
   }
 
 }

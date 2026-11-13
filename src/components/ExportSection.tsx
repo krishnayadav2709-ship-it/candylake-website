@@ -69,7 +69,6 @@ import {
   ArrowUpRight,
   Globe2,
   Plane,
-  Sparkles,
   MapPin,
   Package,
 } from "lucide-react";
@@ -384,13 +383,6 @@ export default function ExportSection() {
                   </Marker>
 
                 </ComposableMap>
-              </div>
-
-              {/* Map top-right detail */}
-
-              <div className="cl-map-corner-tag">
-                <Sparkles size={13} />
-                Made with sweetness
               </div>
 
             </div>
