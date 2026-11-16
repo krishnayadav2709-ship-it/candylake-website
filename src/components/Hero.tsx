@@ -3,13 +3,17 @@
 import { motion, useReducedMotion } from "framer-motion";
 
 const heroCopyVariants = {
-  hidden: {},
-  visible: { transition: { staggerChildren: 0.12, delayChildren: 0.08 } }
+  hidden: { opacity: 0, y: 18 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, ease: [.22, 1, .36, 1] as const, staggerChildren: 0.12, delayChildren: 0.08 }
+  }
 };
 
 const heroItemVariants = {
-  hidden: { y: 16 },
-  visible: { y: 0, transition: { duration: 0.55, ease: [.22, 1, .36, 1] as const } }
+  hidden: { opacity: 0, y: 16 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.55, ease: [.22, 1, .36, 1] as const } }
 };
 
 // "use client";
@@ -47,7 +51,13 @@ export default function Hero() {
     <div className="hero-video-overlay" />
     <div className="hero-glow glow-one" /><div className="hero-glow glow-two" />
     <div className="hero-inner">
-      <motion.div className="hero-copy" data-reveal="left" variants={heroCopyVariants} initial={reduce ? false : "hidden"} animate={reduce ? undefined : "visible"}>
+      <motion.div
+        className="hero-copy"
+        variants={heroCopyVariants}
+        initial={reduce ? false : "hidden"}
+        whileInView={reduce ? undefined : "visible"}
+        viewport={{ once: true, amount: 0.25 }}
+      >
         <motion.div className="eyebrow" variants={heroItemVariants}> A little joy in every bite</motion.div>
         <motion.h1 variants={heroItemVariants}>Make life<br /><span>a little more</span><br /><em>delicious.</em></motion.h1>
         <motion.p variants={heroItemVariants}>From nostalgic favourites to exciting new flavours, discover treats made to turn everyday moments into happy ones.</motion.p>
@@ -55,7 +65,13 @@ export default function Hero() {
         <motion.div className="hero-note" variants={heroItemVariants}><span className="note-dot" /> Crafting smiles since 1989</motion.div>
       </motion.div>
 
-      <div className="hero-art" data-reveal="right">
+      <motion.div
+        className="hero-art"
+        initial={reduce ? false : { opacity: 0, x: 24 }}
+        whileInView={reduce ? undefined : { opacity: 1, x: 0 }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 0.7, ease: [.22, 1, .36, 1], delay: 0.12 }}
+      >
         <div className="hero-candy-halo" aria-hidden="true" />
         <motion.div
           className="hero-candy-orbit"
@@ -296,7 +312,7 @@ export default function Hero() {
 
         <div className="art-sticker sticker-top">HAPPY<br />TASTE!</div>
         <div className="art-sticker sticker-bottom">JOY<br />UNLIMITED </div>
-      </div>
+      </motion.div>
     </div>
     <div className="hero-bottom-label">CANDYLAKE® — THE JOY FACTORY</div>
   </section>;

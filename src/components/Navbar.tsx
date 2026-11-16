@@ -13,7 +13,7 @@ export default function Navbar() {
   return <header className="site-header">
     <nav className="nav-shell">
       <a href="/" className="brand" aria-label="CandyLake home">
-        <Image src="/images/logo.png" alt="logo" width={170} height={64} priority className="brand-logo" />
+        <Image src="/images/logo.png" alt="CandyLake" width={250} height={62} priority className="brand-logo" />
       </a>
       <div className="desktop-links">{links.map(link => <a key={link.href} href={link.href}>{link.label}</a>)}</div>
       <button className="mobile-toggle" type="button" aria-label="Toggle navigation" aria-expanded={open} aria-controls="mobile-navigation" onClick={() => setOpen(!open)}>{open ? <X /> : <Menu />}</button>
